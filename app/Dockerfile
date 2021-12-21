@@ -16,12 +16,14 @@ RUN apt-get install tzdata -qqy;
 RUN apt install software-properties-common -qqy\
     && add-apt-repository ppa:ondrej/php -y \
     && apt update -qqy \
-    && apt install php8.0 php8.0-mbstring -qqy;
+    && apt install php8.0 php8.0-mbstring php8.0-simplexml -qqy;
 
 RUN apt autoremove && apt autoclean
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+ADD files/credentials /root/.aws/credentials
 
 WORKDIR /app
 

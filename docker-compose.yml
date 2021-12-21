@@ -8,6 +8,17 @@ services:
       - "./app/src:/app"
     links:
       - rabbitmq
+      - sqs
   rabbitmq:
     image: rabbitmq:3.9
     container_name: msg-rabbitmq
+  sqs:
+    image: roribio16/alpine-sqs:1.2.0
+    container_name: msg-sqs
+    volumes:
+      - "./sqs/elasticmq.conf:/opt/elasticmq.conf:ro"
+    ports:
+      - "9324:9324"
+      - "9325:9325"
+    stdin_open: true
+    tty: true
