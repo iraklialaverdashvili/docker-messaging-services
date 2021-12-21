@@ -1,6 +1,7 @@
 {
   "require": {
     "php-amqplib/php-amqplib": ">=3.0",
-    "aws/aws-sdk-php": "^3.63"
+    "aws/aws-sdk-php": "^3.63",
+    "predis/predis": "^1.1"
   }
 }

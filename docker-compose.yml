@@ -9,8 +9,9 @@ services:
     links:
       - rabbitmq
       - sqs
+      - redis
   rabbitmq:
-    image: rabbitmq:3.9
+    image: rabbitmq:3.9.11
     container_name: msg-rabbitmq
   sqs:
     image: roribio16/alpine-sqs:1.2.0
@@ -22,3 +23,6 @@ services:
       - "9325:9325"
     stdin_open: true
     tty: true
+  redis:
+    image: redis:6.2.6
+    container_name: msg-redis
