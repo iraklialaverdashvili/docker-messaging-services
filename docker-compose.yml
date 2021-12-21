@@ -6,4 +6,8 @@ services:
     container_name: msg-app
     volumes:
       - "./app/src:/app"
-
+    links:
+      - rabbitmq
+  rabbitmq:
+    image: rabbitmq:3.9
+    container_name: msg-rabbitmq

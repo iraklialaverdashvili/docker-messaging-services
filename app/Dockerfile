@@ -16,7 +16,7 @@ RUN apt-get install tzdata -qqy;
 RUN apt install software-properties-common -qqy\
     && add-apt-repository ppa:ondrej/php -y \
     && apt update -qqy \
-    && apt install php8.0 -qqy;
+    && apt install php8.0 php8.0-mbstring -qqy;
 
 RUN apt autoremove && apt autoclean
 
