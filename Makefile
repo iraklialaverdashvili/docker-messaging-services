@@ -18,6 +18,10 @@ sqs-shell:
 redis-shell:
 	docker exec -it msg-redis bash
 
+.PHONY:
+memcached-shell:
+	docker exec -it msg-memcached bash
+
 
 # -------------------------
 #  SHORTCUTS

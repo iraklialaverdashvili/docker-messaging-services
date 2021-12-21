@@ -11,25 +11,14 @@ Dockerized services:
 * RabbitMQ
 * AWS SQS
 * Redis
+* Memcached
 
-### Installation and access
+### Run and access
 
-Run project:
 ```
+# Run project
 make init
-```
 
-Shell access:
-```
-# Main app
+# Shell access
 make shell
-
-# RabbitMQ
-make rabbitmq-shell
-
-# SQS
-make sqs-shell
-
-# Redis
-make redis-shell
 ```

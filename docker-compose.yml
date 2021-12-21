@@ -10,6 +10,7 @@ services:
       - rabbitmq
       - sqs
       - redis
+      - memcached
   rabbitmq:
     image: rabbitmq:3.9.11
     container_name: msg-rabbitmq
@@ -26,3 +27,6 @@ services:
   redis:
     image: redis:6.2.6
     container_name: msg-redis
+  memcached:
+    image: memcached:1.6.12-alpine
+    container_name: msg-memcached
