@@ -1,13 +1,33 @@
-# Shell access
+# -------------------------
+#  SHELL ACCESS
+# -------------------------
 
 .PHONY:
 shell:
 	docker exec -it msg-app bash
 
-# Shortcuts
+.PHONY:
+rabbitmq-shell:
+	docker exec -it msg-rabbitmq bash
 
 .PHONY:
-reload: down build up
+sqs-shell:
+	docker exec -it msg-sqs bash
+
+.PHONY:
+redis-shell:
+	docker exec -it msg-redis bash
+
+
+# -------------------------
+#  SHORTCUTS
+# -------------------------
+
+.PHONY:
+init: build start
+
+.PHONY:
+reload: down build start
 
 .PHONY:
 down:
@@ -18,5 +38,13 @@ build:
 	docker-compose build
 
 .PHONY:
-up:
+start:
 	docker-compose up -d
+
+.PHONY:
+stop:
+	docker-compose stop
+
+.PHONY:
+logs:
+	docker-compose logs -f
